@@ -12,103 +12,155 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #0b1c3c;
+            /* Magical Eid Night Gradient */
+            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
             color: #fff8e1;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
             overflow: hidden;
+            position: relative;
         }
+
+        /* Animated Stars Background */
+        .stars-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123163/stars.png') repeat top center;
+            z-index: 0;
+            animation: move-stars 200s linear infinite;
+        }
+
+        @keyframes move-stars {
+            from { background-position: 0 0; }
+            to { background-position: 10000px 5000px; }
+        }
+
+        /* Glowing Moon */
+        .moon {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 80px;
+            height: 80px;
+            background: #fdf6e3;
+            border-radius: 50%;
+            box-shadow: 0 0 40px #ffd700;
+            z-index: 1;
+        }
+
         .container {
             background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px); /* Glass effect */
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
             max-width: 90%;
             width: 400px;
             position: relative;
+            z-index: 2;
         }
+
         .anime-char {
             width: 100%;
-            max-width: 250px;
-            border-radius: 20px;
+            max-width: 200px;
+            border-radius: 15px;
             margin-bottom: 20px;
+            border: 3px solid #ffd700;
         }
-        .buttons {
-            margin-top: 30px;
-            position: relative;
-            height: 60px;
-        }
+
         button {
-            padding: 12px 30px;
-            font-size: 18px;
+            padding: 12px 25px;
+            font-size: 16px;
             border: none;
-            border-radius: 10px;
+            border-radius: 50px;
             cursor: pointer;
             transition: 0.3s;
             font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
-        #nextBtn, #yesBtn, #letterNextBtn { background-color: #ffd700; color: #0b1c3c; }
-        #noBtn { background-color: #6c757d; color: white; position: absolute; }
+
+        #nextBtn, #yesBtn, #letterNextBtn { 
+            background: linear-gradient(45deg, #ffd700, #ffae00); 
+            color: #0b1c3c; 
+        }
+
+        #nextBtn:hover { transform: scale(1.1); }
+
+        #noBtn { background-color: #ff4b2b; color: white; position: absolute; }
+
         .hidden { display: none; }
-        .letter { font-family: 'Georgia', serif; text-align: left; line-height: 1.6; padding: 10px; }
+
+        .letter-box {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 15px;
+            border-left: 4px solid #ffd700;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
+<div class="stars-container"></div>
+<div class="moon"></div>
+
 <div id="step1" class="container">
-    <img src="https://i.pinimg.com/originals/91/92/7d/91927d2f9540b6e79269d0d9319e7616.gif" alt="Hi" class="anime-char">
-    <h1>Hi Handsome Darling!</h1>
+    <img src="https://i.pinimg.com/originals/91/92/7d/91927d2f9540b6e79269d0d9319e7616.gif" class="anime-char">
+    <h1 style="font-size: 24px;">Hi Handsome Darling! ✨</h1>
     <p>Apke lye ek chota sa surprise hai...</p>
-    <div class="buttons">
-        <button id="nextBtn" onclick="nextStep(2)">Dikhayein!</button>
-    </div>
+    <button id="nextBtn" onclick="nextStep(2)">Dikhayein! ✨</button>
 </div>
 
 <div id="step2" class="container hidden">
-    <img src="https://i.pinimg.com/originals/11/43/60/114360e5860368153b890989369320e6.gif" alt="Eid" class="anime-char">
-    <h2>Eid Mubarak JAAN JANU 🌝</h2>
-    <p>⭐️ 🌙 ✨</p>
-    <div class="buttons">
-        <button id="nextBtn" onclick="nextStep(3)">Chalein Aage?</button>
-    </div>
+    <img src="https://i.pinimg.com/originals/11/43/60/114360e5860368153b890989369320e7.gif" class="anime-char">
+    <h2 style="color: #ffd700;">Eid Mubarak <br> JAAN JANU 🌝</h2>
+    <p>🌙 Eid-ul-Fitr Mubarak ho apko! ✨</p>
+    <button id="nextBtn" onclick="nextStep(3)">Chalein Aage? ✨</button>
 </div>
 
 <div id="step3" class="container hidden">
-    <img src="https://i.pinimg.com/originals/34/00/27/340027150a4693950669f688e0f6b450.gif" alt="Ask" class="anime-char">
-    <h3>AP se kuch kehna h , Kia Ap janna chahtey h ???</h3>
-    <div class="buttons">
+    <img src="https://i.pinimg.com/originals/c1/91/92/c19192804f586940d58850616997034c.gif" class="anime-char">
+    <h3 style="font-size: 20px;">Ap se kuch kehna h, <br> Kia Ap janna chahtey h ???</h3>
+    <div style="height: 100px; position: relative; margin-top: 20px;">
         <button id="yesBtn" onclick="nextStep(4)">Yes! ❤️</button>
         <button id="noBtn" onmouseover="moveNoBtn()" onclick="nextStep('3-no')">No 🌝</button>
     </div>
 </div>
 
 <div id="step3-no" class="container hidden">
-    <img src="https://i.pinimg.com/originals/e8/93/7c/e8937c63e27142b6a6552a926305a415.gif" alt="No" class="anime-char">
-    <h3>No Mr Malick! That's not fair! 🌚</h3>
-    <p>Wapis jae kr Yes karey shabash sharafat se bilkul...</p>
-    <button onclick="nextStep(3)">Achha Sorry! 🌚</button>
+    <img src="https://i.pinimg.com/originals/e8/93/7c/e8937c63e27142b6a6552a926305a415.gif" class="anime-char">
+    <h2 style="color: #ff4b2b;">No Mr. Malick! 🌚</h2>
+    <p>That's not fair! Wapis jaein sharafat se aur 'Yes' karein...</p>
+    <button onclick="nextStep(3)" style="background: white; color: black;">Achha Sorry! 🌚</button>
 </div>
 
 <div id="step4" class="container hidden">
-    <div class="letter">
-        <h3 style="text-align:center">Mera Letter ❤️</h3>
-        <p>Yahan apka pura msg letter ayega...</p>
+    <h2 style="color: #ffd700;">Mera Letter ❤️</h2>
+    <div class="letter-box">
+        <p>1 pora msg letter Mera...</p>
+        <p>Roses aur stars aur moons ke sath...</p>
         <p>Eid pe apka sath milna hi mere liye sabse bara gift hai. ✨</p>
     </div>
-    <button id="letterNextBtn" onclick="nextStep(5)">Next</button>
+    <button id="letterNextBtn" onclick="nextStep(5)">Next ✨</button>
 </div>
 
 <div id="step5" class="container hidden">
-    <img src="https://i.pinimg.com/originals/f3/7a/d8/f37ad87693630f142203d938b8d8e342.gif" alt="Bye" class="anime-char">
-    <h1>To kesa Laga ye surprise?</h1>
+    <img src="https://i.pinimg.com/originals/f3/7a/d8/f37ad87693630f142203d938b8d8e342.gif" class="anime-char">
+    <h2>To kesa Laga ye surprise gift? ✨</h2>
     <p>Eid Mubarak & Bye Bye! ❤️</p>
 </div>
 
 <script>
     function moveNoBtn() {
         const noBtn = document.getElementById('noBtn');
-        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
         noBtn.style.left = x + 'px';
         noBtn.style.top = y + 'px';
     }
