@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Surprise for Jaan Janu ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0b1c3c; /* Dark Eid Vibe */
+            color: #fff8e1; /* Off-White for Contrast */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Container for content */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 600px;
+            position: relative;
+        }
+
+        /* Eid Theme Elements */
+        .eid-stars {
+            font-size: 30px;
+            color: #ffd700; /* Golden for Eid */
+        }
+
+        .eid-moon {
+            font-size: 80px;
+            color: #ffd700;
+        }
+
+        h1, h2, h3 { color: #fff8e1; }
+
+        /* Anime Character Images */
+        .anime-char {
+            width: 200px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons */
+        .buttons {
+            margin-top: 30px;
+            position: relative;
+            height: 60px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #nextBtn, #yesBtn, #letterNextBtn {
+            background-color: #ffd700;
+            color: #0b1c3c;
+            font-weight: bold;
+        }
+
+        #noBtn {
+            background-color: #6c757d;
+            color: white;
+            position: absolute;
+        }
+
+        /* Hide content by default */
+        .hidden { display: none; }
+
+        /* Letter Styling */
+        .letter {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: left;
+            line-height: 1.6;
+            padding: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div id="step1" class="container">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHIycXNjdzZqM3R4bm56Z3B6Z3B6Z3B6Z3B6Z3B6Z3B6Z3B6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9iYmxpby80NGFscVByMDVsbFdq/giphy.gif" alt="Hi Anime" class="anime-char">
+    <h1>Hi Handsome Darling!</h1>
+    <p>Apke lye ek chota sa surprise hai...</p>
+    <div class="buttons">
+        <button id="nextBtn" onclick="nextStep(2)">Dikhayein!</button>
+    </div>
+</div>
+
+<div id="step2" class="container hidden">
+    <div class="eid-stars">⭐️⭐️⭐️⭐️⭐️</div>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHIycXNjdzZqM3R4bm56Z3B6Z3B6Z3B6Z3B6Z3B6Z3B6Z3B6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9zZWFyY2gvUTh4RWxiNms5Z2ZpMC5naWY/U8xElb6k9gfi0.gif" alt="Anime Hello" class="anime-char">
+    <h2>Eid Mubarak JAAN JANU 🌝</h2>
+    <p>Ye Eid UL Fitr ki vibe apke sath hai...</p>
+    <div class="buttons">
+        <button id="nextBtn" onclick="nextStep(3)">Chalein Aage?</button>
+    </div>
+</div>
+
+<div id="step3" class="container hidden">
+    <h3>AP se kuch kehna h , Kia Ap janna chahtey h ???</h3>
+    <div class="buttons">
+        <button id="yesBtn" onclick="nextStep(4)">Yes! ❤️</button>
+        <button id="noBtn" onmouseover="moveNoBtn()">No 🌝</button>
+    </div>
+</div>
+
+<div id="step4-no" class="container hidden">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHIycXNjdzZqM3R4bm56Z3B6Z3B6Z3B6Z3B6Z3B6Z3B6Z3B6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9zZWFyY2gvVTQxMGZ4M29naHRuNS5naWY/u8w2lTq0p0yU8.gif" alt="Flirty Anime" class="anime-char">
+    <h3>No Mr Malick! That's not fair! 🌚</h3>
+    <p>Wapis jae kr Yes karey shabash sharafat se bilkul...</p>
+    <div class="buttons">
+        <button id="yesBtn" onclick="nextStep(3)">Achha Achha, Chalta Hoon! 🌚</button>
+    </div>
+</div>
+
+<div id="step4" class="container hidden">
+    <div class="letter">
+        <p>1 pora msg letter Mera</p>
+        <p>Roses aur stars aur moons ke sath...</p>
+        <p>Eid pe apka sath milna hi mere liye sabse bara gift hai.</p>
+        <p>Always yours...</p>
+    </div>
+    <div class="buttons">
+        <button id="letterNextBtn" onclick="nextStep(5)">Next</button>
+    </div>
+</div>
+
+<div id="step5" class="container hidden">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHIycXNjdzZqM3R4bm56Z3B6Z3B6Z3B6Z3B6Z3B6Z3B6Z3B6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9zZWFyY2gvUjh4RWxiNms5Z2ZpMC5naWY/k43r5p7R3GfV8.gif" alt="Anime Bye" class="anime-char">
+    <h1>To kesa Laga ye choto sa surprise gift?</h1>
+    <p>Eid Mubarak! ❤️</p>
+</div>
+
+<script>
+    // Move "No" Button
+    function moveNoBtn() {
+        const noBtn = document.getElementById('noBtn');
+        const x comm = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+        
+        noBtn.style.left = x + 'px';
+        noBtn.style.top = y + 'px';
+    }
+
+    // Move to Next Step
+    function nextStep(stepNumber) {
+        // Hide all containers
+        const containers = document.querySelectorAll('.container');
+        containers.forEach(container => container.classList.add('hidden'));
+
+        // Handle No Button Case
+        if (stepNumber === '3-no') {
+            document.getElementById('step4-no').classList.remove('hidden');
+            return;
+        }
+
+        // Show specific container
+        document.getElementById(`step${stepNumber}`).classList.remove('hidden');
+    }
+
+    // Special click for 'No' to go to hidden Mr Malick message
+    document.getElementById('noBtn').onclick = function() { nextStep('3-no'); };
+
+</script>
+
+</body>
+</html>
