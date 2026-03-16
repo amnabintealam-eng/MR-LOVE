@@ -3,48 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magical Eid Surprise for Jaan Janu ❤️</title>
+    <title>Magical Eid Surprise ❤️</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0; padding: 0;
             display: flex; justify-content: center; align-items: center;
             height: 100vh;
-            /* Extra Dark & Magical Gradient for contrast */
-            background: radial-gradient(circle at center, #1b2735 0%, #0c0d12 60%, #000 100%);
+            background: radial-gradient(circle at center, #1b2735 0%, #0c0d12 100%);
             color: #fff8e1;
             font-family: 'Poppins', sans-serif;
             text-align: center;
             overflow: hidden;
-            position: relative;
         }
 
-        /* --- THE MAGIC: HILTEY JHULTEY STARS --- */
-        .stars-background {
+        /* Moving & Swinging Stars */
+        .stars {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123163/stars.png') repeat top center;
+            background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123163/stars.png') repeat;
             z-index: 0;
-            opacity: 0.8;
-            /* Double animation for move + swing */
-            animation: move-stars 150s linear infinite, swing-stars 10s ease-in-out infinite alternate;
-        }
-
-        /* Glitter rain overlay */
-        .glitter-rain {
-            position: absolute; top: -10%; left: 0; width: 100%; height: 110%;
-            pointer-events: none;
-            z-index: 1;
-            background-image: 
-                radial-gradient(1px 1px at 10% 10%, #fff, transparent),
-                radial-gradient(1px 1px at 20% 30%, #ffd700, transparent),
-                radial-gradient(2px 2px at 40% 70%, #fff, transparent),
-                radial-gradient(1px 1px at 60% 20%, #ffd700, transparent),
-                radial-gradient(1px 1px at 80% 40%, #fff, transparent),
-                radial-gradient(2px 2px at 90% 80%, #ffd700, transparent);
-            background-size: 200px 200px;
             opacity: 0.6;
-            animation: glitter-fall 15s linear infinite, twinkle-stars 4s ease-in-out infinite alternate;
+            animation: move-stars 100s linear infinite;
         }
 
         @keyframes move-stars {
@@ -52,226 +31,139 @@
             to { background-position: 10000px 5000px; }
         }
 
-        @keyframes swing-stars {
-            0% { transform: translateX(-20px); }
-            100% { transform: translateX(20px); }
-        }
-
-        @keyframes glitter-fall {
-            from { background-position: 0 0; }
-            to { background-position: 0 100%; }
-        }
-
-        @keyframes twinkle-stars {
-            0% { opacity: 0.4; }
-            100% { opacity: 0.9; }
-        }
-
-        /* --- The Fixed & Glittery Moon --- */
         .moon {
-            position: absolute; top: 30px; right: 30px;
-            width: 70px; height: 70px;
+            position: absolute; top: 20px; right: 20px;
+            width: 60px; height: 60px;
             background: #fffbea;
             border-radius: 50%;
-            /* Double Glow for Surprise factor */
-            box-shadow: 
-                0 0 50px 10px rgba(255, 215, 0, 0.8), 
-                0 0 120px 25px rgba(255, 215, 0, 0.5),
-                inset 0 0 20px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 50px #ffd700, 0 0 100px rgba(255,215,0,0.5);
             z-index: 2;
-            animation: moon-glow 4s ease-in-out infinite alternate;
         }
 
-        @keyframes moon-glow {
-            0% { box-shadow: 0 0 50px 10px rgba(255, 215, 0, 0.7), 0 0 100px 20px rgba(255, 215, 0, 0.4); }
-            100% { box-shadow: 0 0 70px 15px rgba(255, 215, 0, 0.9), 0 0 140px 30px rgba(255, 215, 0, 0.6); }
-        }
-
-        /* Container Card - Glass effect */
         .container {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
-            padding: 40px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 215, 0, 0.25);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            max-width: 90%;
-            width: 380px;
+            padding: 30px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            width: 350px;
             position: relative;
             z-index: 3;
-            transition: transform 0.3s ease;
         }
-        .container:hover { transform: translateY(-5px); }
 
-        /* Stable Anime Images with fixing logic */
         .image-wrapper {
-            position: relative;
-            width: 100%; max-width: 220px;
-            margin: 0 auto 25px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 2px solid rgba(255, 215, 0, 0.4);
-            box-shadow: 0 5px 15px rgba(255,215,0,0.2);
-        }
-
-        .anime-char {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        /* --- THE TRICK: HIDE BROKEN ICON, SHOW CUTE EMOJI --- */
-        .image-wrapper img:not([src]),
-        .image-wrapper img[src=""],
-        .image-wrapper img[onerror] {
-          visibility: hidden;
-        }
-
-        /* When image fails, show this emoji instead */
-        .image-wrapper::before {
-            content: "🥺"; /* Cute Emoji */
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 80px;
+            width: 100%; height: 200px;
             background: rgba(255,255,255,0.05);
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 50px;
+            overflow: hidden;
         }
 
-        /* Only show emoji if image is broken */
-        .broken-img .anime-char { display: none; }
-        .broken-img::before { opacity: 1; z-index: 1; }
+        .anime-img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Beautiful Buttons */
+        .hidden { display: none !important; }
+
         button {
-            padding: 14px 30px;
-            font-size: 16px;
-            border: none;
+            padding: 12px 25px;
             border-radius: 50px;
+            border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            font-weight: bold;
+            transition: 0.3s;
+            background: linear-gradient(45deg, #ffd700, #ffae00);
+            color: #0d1a33;
         }
 
-        .primary-btn { 
-            background: linear-gradient(45deg, #ffd700, #ffae00); 
-            color: #0d1a33; 
-        }
-        .primary-btn:hover { background: linear-gradient(45deg, #ffae00, #ffd700); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,215,0,0.4); }
+        button:hover { transform: scale(1.05); box-shadow: 0 0 15px #ffd700; }
 
-        #noBtn { background-color: #ff4b2b; color: white; position: absolute; font-size: 14px; padding: 10px 20px; }
+        #noBtn { position: absolute; background: #ff4b2b; color: white; }
 
-        .hidden { display: none; }
-
-        /* Elegant Letter Box */
         .letter-box {
-            text-align: left;
-            background: rgba(255, 255, 255, 0.04);
-            padding: 20px;
-            border-radius: 18px;
-            border-left: 5px solid #ffd700;
-            margin-bottom: 25px;
-            font-family: 'Georgia', serif;
-            font-style: italic;
-            line-height: 1.7;
+            text-align: left; background: rgba(0,0,0,0.2);
+            padding: 15px; border-radius: 10px; border-left: 3px solid #ffd700;
+            margin-bottom: 20px; font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-<div class="stars-background"></div>
-<div class="glitter-rain"></div>
+<div class="stars"></div>
 <div class="moon"></div>
 
 <div id="step1" class="container">
-    <div class="image-wrapper" id="wrapper1">
-        <img src="https://i.pinimg.com/originals/91/92/7d/91927d2f9540b6e79269d0d9319e7616.gif" class="anime-char" onerror="handleImageError(this, 'wrapper1')">
+    <div class="image-wrapper">
+        <img src="https://i.pinimg.com/originals/91/92/7d/91927d2f9540b6e79269d0d9319e7616.gif" class="anime-img" onerror="this.style.display='none'; this.parentElement.innerHTML='🥺'">
     </div>
-    <h1 style="font-size: 26px; font-weight: 600;">Hi Handsome Darling! ✨</h1>
-    <p style="opacity: 0.8; margin-bottom: 30px;">Apke lye ek chota sa surprise gift hai...</p>
-    <button class="primary-btn" onclick="nextStep(2)">Dikhayein! ✨</button>
+    <h2>Hi Handsome Darling! ✨</h2>
+    <p>Apke lye ek chota sa surprise gift hai...</p>
+    <button onclick="showStep(2)">LETS OPEN! ✨</button>
 </div>
 
 <div id="step2" class="container hidden">
-    <div class="image-wrapper" id="wrapper2">
-        <img src="https://i.pinimg.com/originals/c1/91/92/c19192804f586940d58850616997034c.gif" class="anime-char" onerror="handleImageError(this, 'wrapper2')">
+    <div class="image-wrapper">
+        <img src="https://i.pinimg.com/originals/c1/91/92/c19192804f586940d58850616997034c.gif" class="anime-img" onerror="this.style.display='none'; this.parentElement.innerHTML='🌙'">
     </div>
-    <h2 style="color: #ffd700; font-size: 28px;">Eid Mubarak <br> JAAN JANU 🌝</h2>
-    <p style="opacity: 0.9;">🌙 ✨ Bohat bohat Mubarak ho apko! ✨</p>
-    <button class="primary-btn" onclick="nextStep(3)">Chalein Aage? ✨</button>
+    <h2 style="color: #ffd700;">Eid Mubarak <br> JAAN JANU 🌝</h2>
+    <p>🌙 Bohat Mubarak ho apko! ✨</p>
+    <button onclick="showStep(3)">AGEY CHALEY? SOMETHING IS WAITING FOR YOU✨</button>
 </div>
 
 <div id="step3" class="container hidden">
-    <div class="image-wrapper" id="wrapper3">
-        <img src="https://i.pinimg.com/originals/13/46/71/1346716035048d8882b54546419733c9.gif" class="anime-char" onerror="handleImageError(this, 'wrapper3')">
+    <div class="image-wrapper">
+        <img src="https://i.pinimg.com/originals/13/46/71/1346716035048d8882b54546419733c9.gif" class="anime-img" onerror="this.style.display='none'; this.parentElement.innerHTML='🌚'">
     </div>
-    <h3 style="font-size: 22px;">Ap se kuch kehna h, <br> Kia Ap janna chahtey h ???🌚</h3>
-    <div style="height: 120px; position: relative; margin-top: 30px;">
-        <button id="yesBtn" class="primary-btn" onclick="nextStep(4)">Yes! ❤️</button>
-        <button id="noBtn" onmouseover="moveNoBtn()" onclick="nextStep('3-no')">No 🌝</button>
+    <h3>AP se kuch kehna h, <br> Kia Ap janna chahtey h ???</h3>
+    <div style="height: 100px; position: relative; margin-top: 20px;">
+        <button id="yesBtn" onclick="showStep(5)">Yes! ❤️</button>
+        <button id="noBtn" onmouseover="moveNo()">No 🌝</button>
     </div>
-</div>
-
-<div id="step3-no" class="container hidden">
-    <div class="image-wrapper" id="wrapper4">
-        <img src="https://i.pinimg.com/originals/e8/93/7c/e8937c63e27142b6a6552a926305a415.gif" class="anime-char" onerror="handleImageError(this, 'wrapper4')">
-    </div>
-    <h2 style="color: #ff4b2b;">No Mr. Malick! 🌚</h2>
-    <p style="opacity: 0.9; margin-bottom: 25px;">That's not fair! Wapis jaein sharafat se aur 'Yes' karein...</p>
-    <button onclick="nextStep(3)" style="background: white; color: black; font-weight: bold;">Achha Sorry! 🌚</button>
 </div>
 
 <div id="step4" class="container hidden">
-    <h2 style="color: #ffd700; font-size: 26px;">Mera Letter ❤️</h2>
-    <div class="letter-box">
-        <p>1 pora msg letter Mera... boht piyara sa </p>
-        <p>Eid pe apka sath milna hi mere liye sabse bara gift hai. ✨</p>
-    </div>
-    <button id="letterNextBtn" class="primary-btn" onclick="nextStep(5)">Next ✨</button>
+    <div class="image-wrapper">🥺</div>
+    <h2 style="color: #ff4b2b;">No Mr. Malick! 🌚</h2>
+    <p>That's not fair! Wapis jaein sharafat se aur 'Yes' karein...</p>
+    <button onclick="showStep(3)">GO BACK ! ❤️</button>
 </div>
 
 <div id="step5" class="container hidden">
-    <div class="image-wrapper" id="wrapper5">
-        <img src="https://i.pinimg.com/originals/f3/7a/d8/f37ad87693630f142203d938b8d8e342.gif" class="anime-char" onerror="handleImageError(this, 'wrapper5')">
+    <h2 style="color: #ffd700;">Mera Letter ❤️</h2>
+    <div class="letter-box">
+        <p>1 pora msg letter Mera... BOHT PIYARA SA </p>
+        <p>Eid pe apka sath milna hi mere liye sabse bara gift hai. ✨</p>
     </div>
-    <h2 style="font-size: 24px; font-weight: 600;">To kesa Laga ye surprise gift? ✨</h2>
-    <p style="opacity: 0.9;">Eid Mubarak & Bye Bye! ❤️</p>
+    <button onclick="showStep(6)">Next ✨</button>
+</div>
+
+<div id="step6" class="container hidden">
+    <div class="image-wrapper">
+        <img src="https://i.pinimg.com/originals/f3/7a/d8/f37ad87693630f142203d938b8d8e342.gif" class="anime-img" onerror="this.style.display='none'; this.parentElement.innerHTML='👋'">
+    </div>
+    <h2>To kesa Laga ye CHOTO SA surprise? ✨</h2>
+    <p>Eid Mubarak & Bye Bye! ❤️</p>
 </div>
 
 <script>
-    // Moving the 'No' button
-    function moveNoBtn() {
-        const noBtn = document.getElementById('noBtn');
-        const container = document.querySelector('#step3');
-        const padding comm = 20; 
-        
-        const maxWidth comm = container.offsetWidth - noBtn.offsetWidth - (padding * 2);
-        const maxHeight comm = container.offsetHeight - noBtn.offsetHeight - (padding * 2);
+    function showStep(stepNumber) {
+        // Hide all containers
+        document.querySelectorAll('.container').forEach(div => {
+            div.classList.add('hidden');
+        });
+        // Show the target container
+        document.getElementById('step' + stepNumber).classList.remove('hidden');
+    }
 
-        const x comm = Math.random() * maxWidth + padding;
-        const y comm = Math.random() * maxHeight + padding;
-        
+    function moveNo() {
+        const noBtn = document.getElementById('noBtn');
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
         noBtn.style.left = x + 'px';
         noBtn.style.top = y + 'px';
-    }
-
-    // Navigating between steps
-    function nextStep(stepNumber) {
-        document.querySelectorAll('.container').forEach(c => c.classList.add('hidden'));
-        if (stepNumber === '3-no') {
-            document.getElementById('step3-no').classList.remove('hidden');
-        } else {
-            document.getElementById(`step${stepNumber}`).classList.remove('hidden');
-        }
-    }
-
-    // --- NEW LOGIC: HANDLE IMAGE ERRORS ---
-    function handleImageError(image, wrapperId) {
-        console.error('Image failed to load:', image.src);
-        document.getElementById(wrapperId).classList.add('broken-img');
+        
+        // Sometimes show the 'fair' message if they try too hard
+        noBtn.onclick = function() { showStep(4); };
     }
 </script>
 </body>
