@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eid Surprise for Jaan Janu ❤️</title>
+    <title>Magical Eid Surprise for Jaan Janu ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -12,8 +13,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            /* Magical Eid Night Gradient */
-            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+            /* Extra Glittery Magical Gradient */
+            background: radial-gradient(circle at center, #1b2735 0%, #111 50%, #000 100%),
+                        radial-gradient(circle at top left, rgba(255,215,0,0.15), transparent 30%),
+                        radial-gradient(circle at bottom right, rgba(216,191,216,0.15), transparent 30%);
             color: #fff8e1;
             font-family: 'Poppins', sans-serif;
             text-align: center;
@@ -21,17 +24,43 @@
             position: relative;
         }
 
-        /* Animated Stars Background */
-        .stars-container {
+        /* Animated Particles (Extra Glitters) */
+        .glitter-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* Simulating particles with shadows */
+        .glitter-overlay::after {
+            content: "";
+            position: absolute;
+            width: 2px; height: 2px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 
+                10vw 10vh 2px white, 20vw 30vh 3px #ffd700, 30vw 5vh 2px white, 40vw 25vh 2px #ffd700,
+                50vw 15vh 3px white, 60vw 35vh 2px #ffd700, 70vw 10vh 2px white, 80vw 20vh 3px #ffd700,
+                90vw 30vh 2px white, 5vw 40vh 3px white, 15vw 50vh 2px #ffd700, 25vw 60vh 2px white,
+                35vw 70vh 3px white, 45vw 80vh 2px #ffd700, 55vw 90vh 2px white, 65vw 45vh 3px #ffd700;
+            opacity: 0.6;
+            animation: glitter-twinkle 4s infinite alternate;
+        }
+
+        @keyframes glitter-twinkle {
+            from { opacity: 0.3; transform: scale(1); }
+            to { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        /* Moving Stars Layer */
+        .stars-container {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none;
             background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123163/stars.png') repeat top center;
             z-index: 0;
-            animation: move-stars 200s linear infinite;
+            animation: move-stars 250s linear infinite;
+            opacity: 0.4;
         }
 
         @keyframes move-stars {
@@ -39,96 +68,103 @@
             to { background-position: 10000px 5000px; }
         }
 
-        /* Glowing Moon */
+        /* Super Glowing Moon */
         .moon {
-            position: absolute;
-            top: 50px;
-            right: 50px;
-            width: 80px;
-            height: 80px;
-            background: #fdf6e3;
+            position: absolute; top: 30px; right: 30px;
+            width: 70px; height: 70px;
+            background: #fffbea;
             border-radius: 50%;
-            box-shadow: 0 0 40px #ffd700;
-            z-index: 1;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px); /* Glass effect */
-            padding: 40px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-            max-width: 90%;
-            width: 400px;
-            position: relative;
+            box-shadow: 0 0 50px 10px rgba(255, 215, 0, 0.7), 0 0 100px 20px rgba(255, 215, 0, 0.4);
             z-index: 2;
         }
 
+        /* Container Card */
+        .container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(255,215,0,0.05);
+            max-width: 90%;
+            width: 380px;
+            position: relative;
+            z-index: 3;
+            transition: transform 0.3s ease;
+        }
+        .container:hover { transform: translateY(-5px); }
+
+        /* Stable Anime Images */
         .anime-char {
-            width: 100%;
-            max-width: 200px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border: 3px solid #ffd700;
+            width: 100%; max-width: 220px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(255,215,0,0.2);
         }
 
+        /* Beautiful Buttons */
         button {
-            padding: 12px 25px;
+            padding: 14px 30px;
             font-size: 16px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: 0.3s;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
         }
 
-        #nextBtn, #yesBtn, #letterNextBtn { 
+        .primary-btn { 
             background: linear-gradient(45deg, #ffd700, #ffae00); 
-            color: #0b1c3c; 
+            color: #0d1a33; 
         }
+        .primary-btn:hover { background: linear-gradient(45deg, #ffae00, #ffd700); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,215,0,0.4); }
 
-        #nextBtn:hover { transform: scale(1.1); }
-
-        #noBtn { background-color: #ff4b2b; color: white; position: absolute; }
+        #noBtn { background-color: #ff4b2b; color: white; position: absolute; font-size: 14px; padding: 10px 20px; }
 
         .hidden { display: none; }
 
+        /* Elegant Letter Box */
         .letter-box {
             text-align: left;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 15px;
-            border-left: 4px solid #ffd700;
-            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 20px;
+            border-radius: 18px;
+            border-left: 5px solid #ffd700;
+            margin-bottom: 25px;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            line-height: 1.7;
         }
     </style>
 </head>
 <body>
 
 <div class="stars-container"></div>
+<div class="glitter-overlay"></div>
 <div class="moon"></div>
 
 <div id="step1" class="container">
     <img src="https://i.pinimg.com/originals/91/92/7d/91927d2f9540b6e79269d0d9319e7616.gif" class="anime-char">
-    <h1 style="font-size: 24px;">Hi Handsome Darling! ✨</h1>
-    <p>Apke lye ek chota sa surprise hai...</p>
-    <button id="nextBtn" onclick="nextStep(2)">Dikhayein! ✨</button>
+    <h1 style="font-size: 26px; font-weight: 600;">Hi Handsome Darling! ✨</h1>
+    <p style="opacity: 0.8; margin-bottom: 30px;">Apke lye ek chota sa surprise gift hai...</p>
+    <button class="primary-btn" onclick="nextStep(2)">Dikhayein! ✨</button>
 </div>
 
 <div id="step2" class="container hidden">
-    <img src="https://i.pinimg.com/originals/11/43/60/114360e5860368153b890989369320e7.gif" class="anime-char">
-    <h2 style="color: #ffd700;">Eid Mubarak <br> JAAN JANU 🌝</h2>
-    <p>🌙 Eid-ul-Fitr Mubarak ho apko! ✨</p>
-    <button id="nextBtn" onclick="nextStep(3)">Chalein Aage? ✨</button>
+    <img src="https://i.pinimg.com/originals/c1/91/92/c19192804f586940d58850616997034c.gif" class="anime-char">
+    <h2 style="color: #ffd700; font-size: 28px;">Eid Mubarak <br> JAAN JANU 🌝</h2>
+    <p style="opacity: 0.9;">🌙 ✨ Bohat bohat Mubarak ho apko! ✨</p>
+    <button class="primary-btn" onclick="nextStep(3)">Chalein Aage? ✨</button>
 </div>
 
 <div id="step3" class="container hidden">
-    <img src="https://i.pinimg.com/originals/c1/91/92/c19192804f586940d58850616997034c.gif" class="anime-char">
-    <h3 style="font-size: 20px;">Ap se kuch kehna h, <br> Kia Ap janna chahtey h ???</h3>
-    <div style="height: 100px; position: relative; margin-top: 20px;">
-        <button id="yesBtn" onclick="nextStep(4)">Yes! ❤️</button>
+    <img src="https://i.pinimg.com/originals/13/46/71/1346716035048d8882b54546419733c9.gif" class="anime-char">
+    <h3 style="font-size: 22px;">Ap se kuch kehna h, <br> Kia Ap janna chahtey h ???🌚</h3>
+    <div style="height: 120px; position: relative; margin-top: 30px;">
+        <button id="yesBtn" class="primary-btn" onclick="nextStep(4)">Yes! ❤️</button>
         <button id="noBtn" onmouseover="moveNoBtn()" onclick="nextStep('3-no')">No 🌝</button>
     </div>
 </div>
@@ -136,31 +172,39 @@
 <div id="step3-no" class="container hidden">
     <img src="https://i.pinimg.com/originals/e8/93/7c/e8937c63e27142b6a6552a926305a415.gif" class="anime-char">
     <h2 style="color: #ff4b2b;">No Mr. Malick! 🌚</h2>
-    <p>That's not fair! Wapis jaein sharafat se aur 'Yes' karein...</p>
-    <button onclick="nextStep(3)" style="background: white; color: black;">Achha Sorry! 🌚</button>
+    <p style="opacity: 0.9; margin-bottom: 25px;">That's not fair! Wapis jaein sharafat se aur 'Yes' karein...</p>
+    <button onclick="nextStep(3)" style="background: white; color: black; font-weight: bold;">Achha Sorry! 🌚</button>
 </div>
 
 <div id="step4" class="container hidden">
-    <h2 style="color: #ffd700;">Mera Letter ❤️</h2>
+    <h2 style="color: #ffd700; font-size: 26px;">Mera Letter ❤️</h2>
     <div class="letter-box">
         <p>1 pora msg letter Mera...</p>
         <p>Roses aur stars aur moons ke sath...</p>
         <p>Eid pe apka sath milna hi mere liye sabse bara gift hai. ✨</p>
     </div>
-    <button id="letterNextBtn" onclick="nextStep(5)">Next ✨</button>
+    <button id="letterNextBtn" class="primary-btn" onclick="nextStep(5)">Next ✨</button>
 </div>
 
 <div id="step5" class="container hidden">
     <img src="https://i.pinimg.com/originals/f3/7a/d8/f37ad87693630f142203d938b8d8e342.gif" class="anime-char">
-    <h2>To kesa Laga ye surprise gift? ✨</h2>
-    <p>Eid Mubarak & Bye Bye! ❤️</p>
+    <h2 style="font-size: 24px; font-weight: 600;">To kesa Laga ye surprise gift? ✨</h2>
+    <p style="opacity: 0.9;">Eid Mubarak & Bye Bye! ❤️</p>
 </div>
 
 <script>
     function moveNoBtn() {
         const noBtn = document.getElementById('noBtn');
-        const x = Math.random() * (window.innerWidth - 100);
-        const y = Math.random() * (window.innerHeight - 50);
+        const container = document.querySelector('#step3');
+        const padding = 20; // safe space from edges
+        
+        // Boundaries within the card
+        const maxWidth = container.offsetWidth - noBtn.offsetWidth - (padding * 2);
+        const maxHeight = container.offsetHeight - noBtn.offsetHeight - (padding * 2);
+
+        const x comm = Math.random() * maxWidth + padding;
+        const y comm = Math.random() * maxHeight + padding;
+        
         noBtn.style.left = x + 'px';
         noBtn.style.top = y + 'px';
     }
