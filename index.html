@@ -3,169 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magical Eid Surprise ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>I'm Sorry Daniyal ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0; padding: 0;
             display: flex; justify-content: center; align-items: center;
-            height: 100vh;
-            background: radial-gradient(circle at center, #1b2735 0%, #0c0d12 100%);
-            color: #fff8e1;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #2c0808 0%, #000 100%);
+            color: #fff;
             font-family: 'Poppins', sans-serif;
             text-align: center;
-            overflow: hidden;
-        }
-
-        /* Moving & Swinging Stars */
-        .stars {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123163/stars.png') repeat;
-            z-index: 0;
-            opacity: 0.6;
-            animation: move-stars 100s linear infinite;
-        }
-
-        @keyframes move-stars {
-            from { background-position: 0 0; }
-            to { background-position: 10000px 5000px; }
-        }
-
-        .moon {
-            position: absolute; top: 20px; right: 20px;
-            width: 60px; height: 60px;
-            background: #fffbea;
-            border-radius: 50%;
-            box-shadow: 0 0 50px #ffd700, 0 0 100px rgba(255,215,0,0.5);
-            z-index: 2;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            padding: 30px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            width: 350px;
+            overflow-x: hidden;
             position: relative;
-            z-index: 3;
         }
 
-        .image-wrapper {
-            width: 100%; height: 200px;
-            background: rgba(255,255,255,0.05);
-            margin-bottom: 20px;
-            border-radius: 15px;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 50px;
-            overflow: hidden;
+        /* --- Rose Petals Animation --- */
+        .petals-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 1;
+        }
+        .petal {
+            position: absolute; background-color: #ff4d4d;
+            border-radius: 150% 0 150% 0;
+            opacity: 0.7; animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10%) rotate(0deg); opacity: 0.7; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
         }
 
-        .anime-img { width: 100%; height: 100%; object-fit: cover; }
-
+        /* --- Layout --- */
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 30px; border-radius: 20px;
+            border: 1px solid rgba(255, 77, 77, 0.3);
+            width: 90%; max-width: 450px;
+            z-index: 10; position: relative;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+            max-height: 80vh; overflow-y: auto;
+        }
         .hidden { display: none !important; }
 
+        h1, .romantic-text { font-family: 'Great Vibes', cursive; color: #ff4d4d; }
+        h1 { font-size: 3rem; margin: 10px 0; }
+        .msg-text { font-size: 14px; line-height: 1.6; text-align: justify; margin-bottom: 20px; }
+
+        .sticker { font-size: 80px; margin: 15px 0; display: block; }
+        
         button {
-            padding: 12px 25px;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-            background: linear-gradient(45deg, #ffd700, #ffae00);
-            color: #0d1a33;
+            background: #ff4d4d; color: white;
+            border: none; padding: 12px 25px;
+            border-radius: 50px; cursor: pointer;
+            font-weight: bold; font-size: 16px;
+            transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4);
         }
-
-        button:hover { transform: scale(1.05); box-shadow: 0 0 15px #ffd700; }
-
-        #noBtn { position: absolute; background: #ff4b2b; color: white; }
-
-        .letter-box {
-            text-align: left; background: rgba(0,0,0,0.2);
-            padding: 15px; border-radius: 10px; border-left: 3px solid #ffd700;
-            margin-bottom: 20px; font-size: 14px;
-        }
+        button:hover { transform: scale(1.05); background: #ff3333; }
+        
+        .kiss-btn { font-size: 30px; cursor: pointer; display: block; margin-top: 10px; }
     </style>
 </head>
 <body>
 
-<div class="stars"></div>
-<div class="moon"></div>
+    <div class="petals-container" id="petals"></div>
 
-<div id="step1" class="container">
-    <div class="image-wrapper">
-        <img src="https://i.pinimg.com/originals/91/92/7d/91927d2f9540b6e79269d0d9319e7616.gif" class="anime-img" onerror="this.style.display='none'; this.parentElement.innerHTML='🥺'">
+    <div id="step1" class="container">
+        <span class="sticker">😭❤️</span>
+        <h1>HI JAAN JANU</h1>
+        <p>I have something for you...</p>
+        <span class="kiss-btn" onclick="showStep(2)">💋 Click Here</span>
     </div>
-    <h2>Hi Handsome Darling! ✨</h2>
-    <p>Apke lye ek chota sa surprise gift hai...</p>
-    <button onclick="showStep(2)">Dikhayein! ✨</button>
-</div>
 
-<div id="step2" class="container hidden">
-    <div class="image-wrapper">
-        <img src="https://i.pinimg.com/originals/c1/91/92/c19192804f586940d58850616997034c.gif" class="anime-img" onerror="this.style.display='none'; this.parentElement.innerHTML='🌙'">
+    <div id="step2" class="container hidden">
+        <h1 style="font-size: 2.5rem;">I'm sorry 😔 na jaan janu 🥺</h1>
+        <span class="sticker">💐🌹</span>
+        <p>This bouquet is for you, please gussa thuk do...</p>
+        <button onclick="showStep(3)">Next ❤️</button>
     </div>
-    <h2 style="color: #ffd700;">Eid Mubarak <br> JAAN JANU 🌝</h2>
-    <p>🌙 Bohat Mubarak ho apko! ✨</p>
-    <button onclick="showStep(3)">Chalein Aage? ✨</button>
-</div>
 
-<div id="step3" class="container hidden">
-    <div class="image-wrapper">
-        <img src="https://i.pinimg.com/originals/13/46/71/1346716035048d8882b54546419733c9.gif" class="anime-img" onerror="this.style.display='none'; this.parentElement.innerHTML='🌚'">
+    <div id="step3" class="container hidden">
+        <div class="msg-text">
+            I love you so much jaan janu kr letey h na bat ..... I know I was mistaken there ..... It doesn't mean na k I don't love you .... I know me ne boht ulti pulti chezey ki h ..... Likn wo sb kuch kabhi ye soch k nhi ki k ap se dor raho ya mohabat nahi krti AP se .... 🥺<br><br>
+            Mjhy bs sahi lagta tha k is se AP khush ho jao ge ya is lye k ap se dor na ho ksi bhi trha bs AP se kuch chupaya nhi h mera bacha .... Ye such h k Waha bhi obv sb hotey hansi Mazak hota h Hans bol letey h likn is ka mtlb kahi bhi ye nhi hota na k me se mohabat chot Gai ho ya kuch bhi asa .... Ha AP k samney thori overacting kr deti thi me shayad q k mjhy dar lagta tha k ap mere barey me pata nhi kia soch lengey ya mujh pe trust nhi karey ge ya mere khush honey se AP ko problem hogi ..... Yaha pe me ne Galat samjha na it was my fault na ....<br><br>
+            Is sb me Ap ki koi galti nhi h mera bacha .... Me daniyal se boht piyar krti ho daniyal 😭🫂.... Wo mjhy har chez se zyada Aziz h .... Mjhy ye lagney Laga tha k Mera Jana Pasand nhi AP ko is lye chir hoti thi janey se rukney se likn me kuch nhi kr Pai thi .... Is lye Waha ja k bhi pareshan rehti ho me Ap k lye ye jhoot nhi h .... I promise you na .... Meri galti thi me ne AP ki kuch bato ko boht mislead kr dia khud k lye .... <br><br>
+            <b>I'm sorry 😔</b><br><br>
+            Plz mjhy maaf kr do na .....
+        </div>
+        <button onclick="showStep(4)">You know what ?! ✨</button>
     </div>
-    <h3>AP se kuch kehna h, <br> Kia Ap janna chahtey h ???</h3>
-    <div style="height: 100px; position: relative; margin-top: 20px;">
-        <button id="yesBtn" onclick="showStep(5)">Yes! ❤️</button>
-        <button id="noBtn" onmouseover="moveNo()">No 🌝</button>
+
+    <div id="step4" class="container hidden">
+        <div class="msg-text">
+            You didn't know anything about him 🥺... Wo boht acha h Malick Sahab .... Mujh se boht piyar krta h me janti ho Meri boht perwah krta h mere lye apna sb kuch chor Deta h wo insan .... Me ne shayad kuch nhi Hoga ab tk likn ha wo mard wahid mard h Jo ana chor Deta h apni .... <br><br>
+            Wo nhi janta Hoga likn roz Raat ko jb wo so jata h to usey utha k seeney pe rakh k hi soti ho me .... Mjhy bs acha lagta h wo piyara sa Masoom sa bacha Mera me boht miss krti ho or janti ho wo bhi krta b likn nhi kahey ga ....<br><br>
+            Me daniyal se boht piyar krti ho or daniyal khud bhi mjhy apney khilaf kabhi nhi kr sakta ....
+        </div>
+        <span class="kiss-btn">💋</span>
+        <button onclick="showStep(5)">Next ❤️</button>
     </div>
-</div>
 
-<div id="step4" class="container hidden">
-    <div class="image-wrapper">🥺</div>
-    <h2 style="color: #ff4b2b;">No Mr. Malick! 🌚</h2>
-    <p>That's not fair! Wapis jaein sharafat se aur 'Yes' karein...</p>
-    <button onclick="showStep(3)">Achha Sorry! 🌚</button>
-</div>
-
-<div id="step5" class="container hidden">
-    <h2 style="color: #ffd700;">Mera Letter ❤️</h2>
-    <div class="letter-box">
-        <p>1 pora msg letter Mera...</p>
-        <p>Roses aur stars aur moons ke sath...</p>
-        <p>Eid pe apka sath milna hi mere liye sabse bara gift hai. ✨</p>
+    <div id="step5" class="container hidden">
+        <p>Ab agr ainda koi fazool bat apney lye ki to band dongy or tb tk piyar krti rahongy jb tk maan nhi jatey smajhey ....🥺</p>
+        <h1 style="font-size: 2.5rem;">Maaf kr do na 🫂🫂🫂🫂</h1>
+        <span class="kiss-btn">💋</span>
+        <p style="font-size: 12px; cursor: pointer;" onclick="showStep(6)">click here</p>
     </div>
-    <button onclick="showStep(6)">Next ✨</button>
-</div>
 
-<div id="step6" class="container hidden">
-    <div class="image-wrapper">
-        <img src="https://i.pinimg.com/originals/f3/7a/d8/f37ad87693630f142203d938b8d8e342.gif" class="anime-img" onerror="this.style.display='none'; this.parentElement.innerHTML='👋'">
+    <div id="step6" class="container hidden" style="width: 100vw; max-width: none; border: none; background: transparent;">
+        <h1 style="font-size: 4rem; text-shadow: 0 0 20px #ff4d4d;">I love you <br>Mr Daniyal Malick ❤️</h1>
+        <span class="sticker" style="font-size: 120px;">🥰🫂</span>
     </div>
-    <h2>To kesa Laga ye surprise? ✨</h2>
-    <p>Eid Mubarak & Bye Bye! ❤️</p>
-</div>
 
-<script>
-    function showStep(stepNumber) {
-        // Hide all containers
-        document.querySelectorAll('.container').forEach(div => {
-            div.classList.add('hidden');
-        });
-        // Show the target container
-        document.getElementById('step' + stepNumber).classList.remove('hidden');
-    }
+    <script>
+        // --- Rose Petals Logic ---
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.width = Math.random() * 10 + 5 + 'px';
+            petal.style.height = petal.style.width;
+            petal.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.getElementById('petals').appendChild(petal);
+            setTimeout(() => { petal.remove(); }, 5000);
+        }
+        setInterval(createPetal, 200);
 
-    function moveNo() {
-        const noBtn = document.getElementById('noBtn');
-        const x = Math.random() * (window.innerWidth - 100);
-        const y = Math.random() * (window.innerHeight - 50);
-        noBtn.style.left = x + 'px';
-        noBtn.style.top = y + 'px';
-        
-        // Sometimes show the 'fair' message if they try too hard
-        noBtn.onclick = function() { showStep(4); };
-    }
-</script>
+        // --- Navigation Logic ---
+        function showStep(num) {
+            document.querySelectorAll('.container').forEach(c => c.classList.add('hidden'));
+            document.getElementById('step' + num).classList.remove('hidden');
+            window.scrollTo(0,0);
+        }
+    </script>
 </body>
 </html>
