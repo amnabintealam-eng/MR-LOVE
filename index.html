@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Sorry JAAN JANU 💜❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <title>For Daniyal Malick 💜❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <style>
+        * { box-sizing: border-box; }
         body {
             margin: 0; padding: 0;
             display: flex; justify-content: center; align-items: center;
@@ -18,7 +19,7 @@
             position: relative;
         }
 
-        /* --- Bigger Rose Petals --- */
+        /* Bigger Rose Petals */
         .petals-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none; z-index: 1;
@@ -34,49 +35,44 @@
         }
 
         .container {
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(12px);
-            padding: 30px; border-radius: 25px;
-            border: 1px solid rgba(160, 32, 240, 0.4);
-            width: 90%; max-width: 450px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            padding: 25px; border-radius: 25px;
+            border: 2px solid rgba(160, 32, 240, 0.5);
+            width: 90%; max-width: 420px;
             z-index: 10; position: relative;
-            box-shadow: 0 0 40px rgba(160, 32, 240, 0.3);
-            max-height: 85vh; overflow-y: auto;
+            box-shadow: 0 0 50px rgba(160, 32, 240, 0.4);
+            max-height: 90vh; overflow-y: auto;
         }
         .hidden { display: none !important; }
 
-        /* Stylish Bold Fonts */
-        h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; color: #a020f0; font-size: 2.5rem; margin: 10px 0; letter-spacing: 1px; }
+        h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; color: #a020f0; font-size: 2.2rem; margin: 15px 0; line-height: 1.2; }
         
         .msg-text { 
-            font-family: 'Montserrat', sans-serif; 
-            font-weight: 700;
-            font-size: 15px; 
-            line-height: 1.8; 
-            text-align: justify; 
-            margin-bottom: 20px;
-            font-style: normal !important; /* No italics */
-            color: #eee;
+            font-family: 'Montserrat', sans-serif; font-weight: 700;
+            font-size: 14px; line-height: 1.6; text-align: justify; 
+            margin-bottom: 20px; color: #f0f0f0; font-style: normal;
         }
 
-        .sticker { font-size: 70px; margin: 15px 0; display: inline-block; }
+        .sticker { font-size: 60px; margin: 10px 0; display: block; filter: drop-shadow(0 0 10px rgba(255,255,255,0.3)); }
         
         button {
             background: linear-gradient(45deg, #a020f0, #ff4d4d);
-            color: white; border: none; padding: 12px 30px;
+            color: white; border: none; padding: 14px 35px;
             border-radius: 50px; cursor: pointer;
             font-weight: 800; font-family: 'Montserrat', sans-serif;
-            transition: 0.3s; box-shadow: 0 4px 15px rgba(160, 32, 240, 0.4);
+            transition: 0.3s; box-shadow: 0 5px 20px rgba(160, 32, 240, 0.5);
+            margin: 10px 0;
         }
         button:hover { transform: scale(1.05); filter: brightness(1.2); }
         
-        .kiss-btn { font-size: 35px; cursor: pointer; display: block; margin: 15px 0; }
+        .kiss-btn { font-size: 40px; cursor: pointer; display: block; margin: 20px 0; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
         .letter-box {
-            background: rgba(160, 32, 240, 0.1);
-            padding: 20px; border-radius: 15px;
-            border-left: 5px solid #ff4d4d;
-            margin-bottom: 20px;
+            background: rgba(160, 32, 240, 0.15);
+            padding: 15px; border-radius: 15px;
+            border-left: 6px solid #ff4d4d; margin-bottom: 20px;
         }
     </style>
 </head>
@@ -85,17 +81,18 @@
     <div class="petals-container" id="petals"></div>
 
     <div id="step1" class="container">
-        <span class="sticker">😭💜❤️</span>
+        <span class="sticker">😭 💜 ❤️</span>
         <h1>HI JAAN JANU</h1>
-        <p style="font-weight: 700;">I have something for you...</p>
-        <span class="kiss-btn" onclick="showStep(2)">💋 Click Here</span>
+        <p style="font-weight: 700; letter-spacing: 1px;">I have something for you...</p>
+        <span class="kiss-btn" onclick="showStep(2)">💋</span>
+        <p style="font-size: 12px; opacity: 0.7;">Click the kiss</p>
     </div>
 
     <div id="step2" class="container hidden">
         <h1>I'm sorry 😔 na jaan janu 🥺</h1>
-        <span class="sticker">💐🌹</span>
+        <span class="sticker">💐 🌹</span>
         <p style="font-weight: 700;">This bouquet is for you, please gussa thuk do...</p>
-        <button onclick="showStep(3)">Next 💜❤️</button>
+        <button onclick="showStep(3)">Next 💜 ❤️</button>
     </div>
 
     <div id="step3" class="container hidden">
@@ -103,8 +100,8 @@
             <div class="msg-text">
                 I love you so much jaan janu kr letey h na bat ..... I know I was mistaken there ..... It doesn't mean na k I don't love you .... I know me ne boht ulti pulti chezey ki h ..... Likn wo sb kuch kabhi ye soch k nhi ki k ap se dor raho ya mohabat nahi krti AP se .... 🥺<br><br>
                 Mjhy bs sahi lagta tha k is se AP khush ho jao ge ya is lye k ap se dor na ho ksi bhi trha bs AP se kuch chupaya nhi h mera bacha .... Ye such h k Waha bhi obv sb hotey hansi Mazak hota h Hans bol letey h likn is ka mtlb kahi bhi ye nhi hota na k me se mohabat chot Gai ho ya kuch bhi asa .... Ha AP k samney thori overacting kr deti thi me shayad q k mjhy dar lagta tha k ap mere barey me pata nhi kia soch lengey ya mujh pe trust nhi karey ge ya mere khush honey se AP ko problem hogi ..... Yaha pe me ne Galat samjha na it was my fault na ....<br><br>
-                Is sb me Ap ki koi galti nhi h mera bacha .... Me daniyal se boht piyar krti ho daniyal 😭💋.... Wo mjhy har chez se zyada Aziz h .... Mjhy ye lagney Laga tha k Mera Jana Pasand nhi AP ko is lye chir hoti thi janey se rukney se likn me kuch nhi kr Pai thi .... Is lye Waha ja k bhi pareshan rehti ho me Ap k lye ye jhoot nhi h .... I promise you na .... Meri galti thi me ne AP ki kuch bato ko boht mislead kr dia khud k lye .... <br><br>
-                <b>I'M SORRY 😔</b><br><br>
+                Is sb me Ap ki koi galti nhi h mera bacha .... Me daniyal se boht piyar krti ho daniyal 😭 🫂 .... Wo mjhy har chez se zyada Aziz h .... Mjhy ye lagney Laga tha k Mera Jana Pasand nhi AP ko is lye chir hoti thi janey se rukney se likn me kuch nhi kr Pai thi .... Is lye Waha ja k bhi pareshan rehti ho me Ap k lye ye jhoot nhi h .... I promise you na .... Meri galti thi me ne AP ki kuch bato ko boht mislead kr dia khud k lye .... <br><br>
+                <center><b style="font-size: 18px; color: #ff4d4d;">I'M SORRY 😔</b></center><br>
                 Plz mjhy maaf kr do na .....
             </div>
         </div>
@@ -119,24 +116,24 @@
                 Me daniyal se boht piyar krti ho or daniyal khud bhi mjhy apney khilaf kabhi nhi kr sakta ....
             </div>
         </div>
-        <span class="kiss-btn">💋</span>
-        <button onclick="showStep(5)">Next 💜❤️</button>
+        <span class="sticker">💋 💋</span>
+        <button onclick="showStep(5)">Next 💜 ❤️</button>
     </div>
 
     <div id="step5" class="container hidden">
-        <p class="msg-text" style="text-align: center;">Ab agr ainda koi fazool bat apney lye ki to band dongy or tb tk piyar krti rahongy jb tk maan nhi jatey smajhey ....🥺</p>
-        <h1>Maaf kr do na 💋💋💋</h1>
+        <p class="msg-text" style="text-align: center;">Ab agr ainda koi fazool bat apney lye ki to band dongy or tb tk piyar krti rahongy jb tk maan nhi jatey smajhey .... 🥺</p>
+        <h1>Maaf kr do na 🫂 🫂 🫂</h1>
         <span class="kiss-btn">💋</span>
-        <p style="font-size: 13px; color: #a020f0; cursor: pointer; font-weight: 800;" onclick="showStep(6)">click here</p>
+        <p style="font-size: 14px; color: #ff4d4d; cursor: pointer; font-weight: 800; text-decoration: underline;" onclick="showStep(6)">CLICK HERE</p>
     </div>
 
     <div id="step6" class="container hidden" style="width: 100vw; max-width: none; border: none; background: transparent;">
-        <h1 style="font-size: 3.5rem; text-shadow: 0 0 30px #a020f0; color: #fff; font-weight: 900;">I LOVE YOU <br>MR DANIYAL MALICK 💜❤️</h1>
-        <span class="sticker" style="font-size: 120px;">😭💋</span>
+        <h1 style="font-size: 3rem; text-shadow: 0 0 30px #a020f0; color: #fff; font-weight: 900;">I LOVE YOU <br>MR DANIYAL MALICK 💜 ❤️</h1>
+        <span class="sticker" style="font-size: 100px;">🥰 🫂</span>
     </div>
 
     <script>
-        // --- Bigger Rose Petals Logic ---
+        // Rose Petals logic
         function createPetal() {
             const petal = document.createElement('div');
             petal.classList.add('petal');
@@ -153,7 +150,8 @@
         function showStep(num) {
             document.querySelectorAll('.container').forEach(c => c.classList.add('hidden'));
             document.getElementById('step' + num).classList.remove('hidden');
-            window.scrollTo(0,0);
+            // Auto scroll to top
+            document.querySelector('.container:not(.hidden)').scrollTop = 0;
         }
     </script>
 </body>
