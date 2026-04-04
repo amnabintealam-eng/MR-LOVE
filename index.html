@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I'm Sorry Daniyal 💜❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0; padding: 0;
@@ -18,7 +18,7 @@
             position: relative;
         }
 
-        /* --- Big Rose Petals --- */
+        /* --- Bigger Rose Petals --- */
         .petals-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none; z-index: 1;
@@ -45,36 +45,37 @@
         }
         .hidden { display: none !important; }
 
-        /* Stylish Bold Font */
-        h1 { font-family: 'Montserrat', sans-serif; font-weight: 800; color: #a020f0; font-size: 2.5rem; margin: 10px 0; }
+        /* Stylish Bold Fonts */
+        h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; color: #a020f0; font-size: 2.5rem; margin: 10px 0; letter-spacing: 1px; }
         
         .msg-text { 
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 14px; 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 700;
+            font-size: 15px; 
             line-height: 1.8; 
             text-align: justify; 
             margin-bottom: 20px;
-            font-style: normal !important;
+            font-style: normal !important; /* No italics */
+            color: #eee;
         }
 
         .sticker { font-size: 70px; margin: 15px 0; display: inline-block; }
         
         button {
-            background: #a020f0; color: white;
-            border: none; padding: 12px 30px;
+            background: linear-gradient(45deg, #a020f0, #ff4d4d);
+            color: white; border: none; padding: 12px 30px;
             border-radius: 50px; cursor: pointer;
             font-weight: 800; font-family: 'Montserrat', sans-serif;
             transition: 0.3s; box-shadow: 0 4px 15px rgba(160, 32, 240, 0.4);
         }
-        button:hover { transform: scale(1.05); background: #8200d1; }
+        button:hover { transform: scale(1.05); filter: brightness(1.2); }
         
         .kiss-btn { font-size: 35px; cursor: pointer; display: block; margin: 15px 0; }
 
         .letter-box {
             background: rgba(160, 32, 240, 0.1);
             padding: 20px; border-radius: 15px;
-            border-left: 5px solid #a020f0;
+            border-left: 5px solid #ff4d4d;
             margin-bottom: 20px;
         }
     </style>
@@ -86,14 +87,14 @@
     <div id="step1" class="container">
         <span class="sticker">😭💜❤️</span>
         <h1>HI JAAN JANU</h1>
-        <p style="font-weight: 600;">I have something for you...</p>
+        <p style="font-weight: 700;">I have something for you...</p>
         <span class="kiss-btn" onclick="showStep(2)">💋 Click Here</span>
     </div>
 
     <div id="step2" class="container hidden">
         <h1>I'm sorry 😔 na jaan janu 🥺</h1>
         <span class="sticker">💐🌹</span>
-        <p style="font-weight: 600;">This bouquet is for you, please gussa thuk do...</p>
+        <p style="font-weight: 700;">This bouquet is for you, please gussa thuk do...</p>
         <button onclick="showStep(3)">Next 💜❤️</button>
     </div>
 
@@ -130,12 +131,12 @@
     </div>
 
     <div id="step6" class="container hidden" style="width: 100vw; max-width: none; border: none; background: transparent;">
-        <h1 style="font-size: 3.5rem; text-shadow: 0 0 30px #a020f0; color: #fff;">I LOVE YOU <br>MR DANIYAL MALICK 💜❤️</h1>
+        <h1 style="font-size: 3.5rem; text-shadow: 0 0 30px #a020f0; color: #fff; font-weight: 900;">I LOVE YOU <br>MR DANIYAL MALICK 💜❤️</h1>
         <span class="sticker" style="font-size: 120px;">🥰🫂</span>
     </div>
 
     <script>
-        // --- Big Rose Petals ---
+        // --- Bigger Rose Petals Logic ---
         function createPetal() {
             const petal = document.createElement('div');
             petal.classList.add('petal');
